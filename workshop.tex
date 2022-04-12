@@ -1,0 +1,125 @@
+\documentclass[presentation,aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[ngerman]{babel}
+\usepackage{longtable,capt-of,fvextra,csquotes}
+\usepackage{wrapfig,rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage[duration=20]{pdfpc}
+\usetheme{metropolis}
+\author{Julius Freudenberger}
+\date{Hackathon Sommersemester 2022}
+\title{WYSIWYAF with \LaTeX}
+\mode<presentation>{\usetheme{metropolis}}
+\mode<beamer|handout>{\metroset{sectionpage=progressbar}}
+\mode<beamer|handout>{\metroset{subsectionpage=progressbar}}
+\mode<beamer|handout>{\metroset{block=fill}}
+\institute[Hochschule Esslingen]{Hochschule Esslingen}
+\hypersetup{
+  pdfauthor={Julius Freudenberger},
+  pdftitle={WYSIWYAF with LaTeX},
+  pdfkeywords={},
+  pdfsubject={},
+pdflang={German}}
+\usepackage{biblatex}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Was ist \LaTeX?}
+  \pdfpcnote{ - Entwicklung seit Anfang der 1980er
+  - What you see is what you get --> What you see is what you asked for}
+  \begin{itemize}
+    \item Textsatzsystem
+    \item setzt vorgegebenen Text und weitere Anweisungen automatisch
+    \item versucht automatisch bestmögliches Layout
+    \item kein WYSIWYG, sondern WYSIWYAF
+    \item Quellcode wird \glqq{}kompiliert\grqq{}
+    \item Dokument wird als PDF, PS, DVI oder sogar HTML ausgegeben
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Wie sieht \LaTeX-Code aus?}
+  \pdfpcnote{
+    - Befehle werden mit \ angegeben
+    - Parameter mit {}
+    - Einrückung hilft bei Lesbarkeit, ist nicht notwendig
+    - Beginn und Ende
+    - normaler Text
+  }
+  \inputminted{latex}{codebeispiele/beispiel.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Was brauche ich?}
+  \begin{itemize}
+    \item \LaTeX-Distribution: \TeX{}Live
+      \begin{itemize}
+        \item Windows: \href{https://tug.org/texlive/windows.html}{https://tug.org/texlive/windows.html}
+        \item Mac: \href{https://tug.org/mactex/}{https://tug.org/mactex/}
+        \item Linux: Installation über den Paketmanager
+          \begin{itemize}
+            \item deb: \verb|texlive-base| (deb), \verb|texlive texlive-latex| (rpm)
+            \item Arch Linux: \verb|texlive-core|
+            \item NixOS: \verb|nixpkgs.texlive.combined.scheme-basic|
+          \end{itemize}
+        \item Docker: \verb|texlive/texlive|
+      \end{itemize}
+    \item Texteditor
+      \begin{itemize}
+        \item VSCode mit \LaTeX-Workshop, vim mit vimtex
+        \item \TeX{}Studio
+      \end{itemize}
+    \item Alternativ: Online-Editoren
+      \begin{itemize}
+        \item Overleaf (\href{https://www.overleaf.com}{https://www.overleaf.com}, Registrierung erforderlich)
+        \item \TeX{}Viewer (\href{https://texviewer.herokuapp.com}{https://texviewer.herokuapp.com}, direkt nutzbar)
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Grundlegender Aufbau}
+  \pdfpcnote{
+    - Dokumentenklasse (book, article, beamer)
+    - Präambel
+      - Metadaten (Titel, Autor, Datum)
+      - Zusätzliche Pakete
+      - Einstellungen
+    - Eigentliches Dokument
+  }
+  \inputminted{latex}{codebeispiele/aufbau.tex}
+\end{frame}
+
+\begin{frame}{Vorlage herunterladen}
+  \begin{itemize}
+    \item \href{https://www2.hs-esslingen.de/~jufrit00/latex/}{https://www2.hs-esslingen.de/\textasciitilde{}jufrit00/latex/}
+    \item \href{https://gitlab.hs-esslingen.de/jufrit00/latex-workshop}{https://gitlab.hs-esslingen.de/jufrit00/latex-workshop}
+    \item \href{https://github.com/JuliusFreudenberger/latex-workshop}{https://github.com/JuliusFreudenberger/latex-workshop}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Projekt kompilieren}
+  \begin{itemize}
+    \item Im Projektverzeichnis \verb|pdflatex file.tex|
+    \item automatisierter mit \verb|latexmk -pdf file.tex|
+    \item mittels Docker und Docker Compose: %TODO
+    \item Outputfile \verb|file.pdf| als PDF-Datei im gleichen Verzeichnis
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Metadaten bearbeiten}
+  \pdfpcnote{
+    - Stärke von LaTeX: Änderungen wirken sich konsistent auf das gesamte Dokument aus.
+    - Keine manuelle Anpassung an mehreren Stellen nötig.
+  }
+  \begin{itemize}
+    \item Titel des Dokuments ändern
+    \item Eigener Name als Autor
+  \end{itemize}
+  Mit \verb|\maketitle| erzeugter Titel ändert sich automatisch
+\end{frame}
+\end{document}
