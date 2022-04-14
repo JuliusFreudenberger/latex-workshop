@@ -31,6 +31,33 @@ pdflang={German}}
 
 \maketitle
 
+\begin{frame}[fragile]{Bevor wir beginnen: Was brauche ich?}
+  \begin{itemize}
+    \item \LaTeX-Distribution: \TeX{}Live
+      \begin{itemize}
+        \item Windows: \href{https://tug.org/texlive/windows.html}{https://tug.org/texlive/windows.html} %TODO MikTeX?
+        \item Mac: \href{https://tug.org/mactex/}{https://tug.org/mactex/}
+        \item Linux: Installation über den Paketmanager
+          \begin{itemize}
+            \item deb: \verb|texlive-base| (deb), \verb|texlive texlive-latex| (rpm)
+            \item Arch Linux: \verb|texlive-core|
+            \item NixOS: \verb|nixpkgs.texlive.combined.scheme-basic|
+          \end{itemize}
+        \item Docker: \verb|texlive/texlive|
+      \end{itemize}
+    \item Texteditor
+      \begin{itemize}
+        \item VSCode mit \LaTeX-Workshop, vim mit vimtex
+        \item \TeX{}Maker
+      \end{itemize}
+    \item Alternativ: Online-Editoren
+      \begin{itemize}
+        \item Overleaf (\href{https://www.overleaf.com}{https://www.overleaf.com}, Registrierung erforderlich)
+        \item \TeX{}Viewer (\href{https://texviewer.herokuapp.com}{https://texviewer.herokuapp.com}, direkt nutzbar)
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{Was ist \LaTeX?}
   \pdfpcnote{ - Entwicklung seit Anfang der 1980er
   - What you see is what you get --> What you see is what you asked for}
@@ -41,6 +68,19 @@ pdflang={German}}
     \item kein WYSIWYG, sondern WYSIWYAF
     \item Quellcode wird \glqq{}kompiliert\grqq{}
     \item Dokument wird als PDF, PS, DVI oder sogar HTML ausgegeben
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Warum \LaTeX?}
+  \pdfpcnote{ Vergleich zu Word
+    - schöner Blocksatz, bestmögliche Zeilenumbrüche und Worttrennungen
+    - Inhaltsverzeichnis und Verzeichnisse für Abbildungen, Stichworte, Abkürzungen und Literatur
+    - Abbildungen und weitere Referenzelemente werden automatisch an der bestmöglichen Stelle eingefügt
+  - Deutlich mehr Automatisierungen als bei Word, "Layoutarbeit" am Ende einer Arbeit deutlich geringer}
+  \begin{itemize}
+    \item Automatischer Textsatz
+    \item Automatische Referenzen
+    \item Automatisches Layout
   \end{itemize}
 \end{frame}
 
@@ -55,40 +95,13 @@ pdflang={German}}
   \inputminted{latex}{codebeispiele/beispiel.tex}
 \end{frame}
 
-\begin{frame}[fragile]{Was brauche ich?}
-  \begin{itemize}
-    \item \LaTeX-Distribution: \TeX{}Live
-      \begin{itemize}
-        \item Windows: \href{https://tug.org/texlive/windows.html}{https://tug.org/texlive/windows.html}
-        \item Mac: \href{https://tug.org/mactex/}{https://tug.org/mactex/}
-        \item Linux: Installation über den Paketmanager
-          \begin{itemize}
-            \item deb: \verb|texlive-base| (deb), \verb|texlive texlive-latex| (rpm)
-            \item Arch Linux: \verb|texlive-core|
-            \item NixOS: \verb|nixpkgs.texlive.combined.scheme-basic|
-          \end{itemize}
-        \item Docker: \verb|texlive/texlive|
-      \end{itemize}
-    \item Texteditor
-      \begin{itemize}
-        \item VSCode mit \LaTeX-Workshop, vim mit vimtex
-        \item \TeX{}Studio
-      \end{itemize}
-    \item Alternativ: Online-Editoren
-      \begin{itemize}
-        \item Overleaf (\href{https://www.overleaf.com}{https://www.overleaf.com}, Registrierung erforderlich)
-        \item \TeX{}Viewer (\href{https://texviewer.herokuapp.com}{https://texviewer.herokuapp.com}, direkt nutzbar)
-      \end{itemize}
-  \end{itemize}
-\end{frame}
-
 \begin{frame}{Grundlegender Aufbau}
   \pdfpcnote{
     - Dokumentenklasse (book, article, beamer)
     - Präambel
-      - Metadaten (Titel, Autor, Datum)
-      - Zusätzliche Pakete
-      - Einstellungen
+    - Metadaten (Titel, Autor, Datum)
+    - Zusätzliche Pakete
+    - Einstellungen
     - Eigentliches Dokument
   }
   \inputminted{latex}{codebeispiele/aufbau.tex}
@@ -106,20 +119,45 @@ pdflang={German}}
   \begin{itemize}
     \item Im Projektverzeichnis \verb|pdflatex file.tex|
     \item automatisierter mit \verb|latexmk -pdf file.tex|
+    \item In \TeX{}Maker \glqq{}Schnelles Übersetzen\grqq{}
     \item mittels Docker und Docker Compose: %TODO
     \item Outputfile \verb|file.pdf| als PDF-Datei im gleichen Verzeichnis
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Metadaten bearbeiten}
+\begin{frame}[fragile]{Erste eigene Änderungen}
   \pdfpcnote{
     - Stärke von LaTeX: Änderungen wirken sich konsistent auf das gesamte Dokument aus.
     - Keine manuelle Anpassung an mehreren Stellen nötig.
+    - Niedrigste Stufe: subsubsection
+    - Bei Text am Besten ein Satz in eine Zeile.
   }
   \begin{itemize}
-    \item Titel des Dokuments ändern
-    \item Eigener Name als Autor
+    \item Eigener Text, Absätze
+    \item Textformatierung: \textbf{fett} und \textit{kursiv} mit \verb|\textbf{fett}|, \verb|\textit{kursiv}|
+    \item Eigene Abschnitte mit \verb|\section{} und \subsection{}|
+    \item Metadaten ändern
+      \begin{itemize}
+        \item Titel des Dokuments ändern mit \verb|\title{}|
+        \item Eigener Name als Autor mit \verb|\author{}|
+      \end{itemize}
   \end{itemize}
-  Mit \verb|\maketitle| erzeugter Titel ändert sich automatisch
+\end{frame}
+
+\begin{frame}[fragile]{Umgebungen}
+  \begin{itemize}
+    \item Umgebungen beginnen mit \verb|\begin{}| und enden mit \verb|\end{}|
+    \item Umgebungen können verschachtelt werden, aber nicht geschnitten
+    \item Aufzählungen \verb|enumerate| (nummeriert) und \verb|itemize| (unnummeriert)
+  \end{itemize}
+  \begin{center}
+    \centering
+    \begin{minted}{latex}
+\begin{itemize}
+  \item Erster Punkt
+  \item Zweiter Punkt
+\end{itemize}
+    \end{minted}
+  \end{center}
 \end{frame}
 \end{document}
