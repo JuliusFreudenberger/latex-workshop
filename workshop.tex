@@ -146,8 +146,9 @@ pdflang={German}}
 
 \begin{frame}[fragile]{Umgebungen}
   \begin{itemize}
-    \item Umgebungen beginnen mit \verb|\begin{}| und enden mit \verb|\end{}|
-    \item Umgebungen können verschachtelt werden, aber nicht geschnitten
+    \item kennzeichnen besondere Bereiche im Dokument
+    \item beginnen mit \verb|\begin{}| und enden mit \verb|\end{}|
+    \item können verschachtelt werden, aber nicht geschnitten
     \item Aufzählungen \verb|enumerate| (nummeriert) und \verb|itemize| (unnummeriert)
   \end{itemize}
   \begin{center}
@@ -159,5 +160,83 @@ pdflang={German}}
 \end{itemize}
     \end{minted}
   \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Wichtige besondere Zeichen}
+  \begin{tabular}{c|c|c}
+    Schrägstrich & \textbackslash & \verb|\textbackslash| \\
+    \hline
+    Tilde & \textasciitilde & \verb|\textasciitilde| \\
+    \hline
+    geschütztes Leerzeichen (ohne Zeilenumbruch) & ~ & \verb|~| \\
+    \hline
+    schmales geschütztes Leerzeichen & z.\,B. & \verb|z.\,B.| \\
+    \hline
+    Gedankenstrich (Halbgeviertstrich) & -- & \verb|--| \\
+    \hline
+    Geviertstrich & --- & \verb|---| 
+  \end{tabular}
+\end{frame}
+
+%TODO label and ref, pageref
+
+\begin{frame}{Mathematik}
+  \begin{itemize}
+    \item \TeX{} ist für seine gute Formeleingabe bekannt
+    \item verschiedene Modi, in denen Formeln gesetzt werden können
+      \begin{itemize}
+        \item inline
+        \item Block
+        \item Gleichung
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Mathematik --- inline}
+  \begin{itemize}
+    \item setzt die Gleichung in einen Fließtext ein
+    \item keine Referenzierung
+    \item Beginn und Ende mit \verb|$|
+  \end{itemize}
+  
+  \begin{minipage}{.4\textwidth}
+    \input{codebeispiele/math-inline}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.5\textwidth}
+    \inputminted{latex}{codebeispiele/math-inline.tex}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Mathematik --- block}
+  \begin{itemize}
+    \item setzt die Gleichung als Block mit Absätzen
+    \item keine Referenzierung
+    \item Beginn mit \verb|\[|, Ende mit \verb|\]|
+  \end{itemize}
+  
+  \begin{minipage}{.4\textwidth}
+    \input{codebeispiele/math-block}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.5\textwidth}
+    \inputminted{latex}{codebeispiele/math-block.tex}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Mathematik --- Gleichung}
+  \begin{itemize}
+    \item setzt die Gleichung als Block mit Absätzen
+    \item Referenzierung über Nummerierung
+    \item Beginn mit \verb|\begin{equation}| Ende mit \verb|\end{equation}|
+  \end{itemize}
+  
+  \begin{minipage}{.4\textwidth}
+    \input{codebeispiele/math-equation}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.5\textwidth}
+    \inputminted{latex}{codebeispiele/math-equation.tex}
+  \end{minipage}
 \end{frame}
 \end{document}
