@@ -9,7 +9,7 @@
 \usepackage[normalem]{ulem}
 \usepackage{amsmath,amssymb}
 \usepackage{hyperref}
-\usepackage{minted}
+\usepackage{listings,minted}
 \usepackage[duration=20]{pdfpc}
 \usetheme{metropolis}
 \author{Julius Freudenberger}
@@ -270,14 +270,91 @@ pdflang={German}}
 \begin{frame}{Graphiken als Gleitobjekt}
   \begin{itemize}
     \item Automatische Positionierung im Text
-    \item Referenzierung über Nummerierung
+    \item Referenzierung mit Nummerierung über Label
   \end{itemize}
   \begin{minipage}[c]{.4\textwidth}
-    \include{codebeispiele/graphics-figure}
+    \input{codebeispiele/graphics-figure}
   \end{minipage}
   \hfill
   \begin{minipage}[c]{.5\textwidth}
     \inputminted{latex}{codebeispiele/graphics-figure.tex}
   \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Codelistings}
+  \begin{itemize}
+    \item Abdrucken von Codezeilen
+    \item Syntaxhighlighting und Zeilennummern
+    \item mögliche Pakete
+      \begin{itemize}
+        \item \verb|verbatim|
+        \item \verb|listings|
+        \item \verb|minted|
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Die verbatim-Umgebung}
+  \begin{itemize}
+    \item kein Syntaxhighlighting und Zeilennummern
+    \item Monospacefont
+    \item Befehle werden nicht ausgeführt
+  \end{itemize}
+  \begin{minipage}{.4\textwidth}
+    \input{codebeispiele/listings-verbatim.tex}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.5\textwidth}
+    \inputminted{latex}{codebeispiele/listings-verbatim.tex}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Die lstlistings-Umgebung}
+  \begin{itemize}
+    \item Syntaxhighlighting bestimmter Sprachen und Zeilennummern
+    \item Customization mit Schriftgröße und Farben
+  \end{itemize}
+  \begin{minipage}{.4\textwidth}
+    \input{codebeispiele/listings-lstlistings.tex}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.5\textwidth}
+    \inputminted{latex}{codebeispiele/listings-lstlistings.tex}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Die minted-Umgebung}
+  \begin{itemize}
+    \item Syntaxhighlighting vieler Sprachen
+    \item Farben direkt voreingestellt
+    \item benötigt \verb|pygmentize| und \verb|shell-escape|-Option beim Kompilieren
+  \end{itemize}
+  \begin{minipage}{.4\textwidth}
+    \input{codebeispiele/listings-minted.tex}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.5\textwidth}
+    \inputminted{latex}{codebeispiele/listings-minted.tex}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Code aus Datei einbinden}
+  \begin{itemize}
+    \item besonders geeignet für längere Codeauszüge
+  \end{itemize}
+  \begin{minipage}{.4\textwidth}
+    \input{codebeispiele/listings-from-file.tex}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.5\textwidth}
+    \inputminted{latex}{codebeispiele/listings-from-file.tex}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Weitere Verzeichnisse}
+  \begin{itemize}
+    \item automatisch aktualisierendes Inhaltsverzeichnis sowie Verzeichnisse für Abbildungen, Codelistings (Abkürzungen, Stichwörter, Bibliographie, \dots)
+  \end{itemize}
+  \inputminted{latex}{codebeispiele/list-of-everything.tex}
 \end{frame}
 \end{document}
