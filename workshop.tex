@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\graphicspath{{./graphics/}}
 \usepackage[ngerman]{babel}
 \usepackage{longtable,capt-of,fvextra,csquotes}
 \usepackage{wrapfig,rotating}
@@ -164,21 +165,29 @@ pdflang={German}}
 
 \begin{frame}[fragile]{Wichtige besondere Zeichen}
   \begin{tabular}{c|c|c}
-    Schrägstrich & \textbackslash & \verb|\textbackslash| \\
+    Schrägstrich                                  & \textbackslash   & \verb|\textbackslash| \\
     \hline
-    Tilde & \textasciitilde & \verb|\textasciitilde| \\
+    Tilde                                         & \textasciitilde  & \verb|\textasciitilde| \\
     \hline
-    geschütztes Leerzeichen (ohne Zeilenumbruch) & ~ & \verb|~| \\
+    geschütztes Leerzeichen (ohne Zeilenumbruch)  & ~                & \verb|~| \\
     \hline
-    schmales geschütztes Leerzeichen & z.\,B. & \verb|z.\,B.| \\
+    schmales geschütztes Leerzeichen              & z.\,B.           & \verb|z.\,B.| \\
     \hline
-    Gedankenstrich (Halbgeviertstrich) & -- & \verb|--| \\
+    Gedankenstrich (Halbgeviertstrich)            & --               & \verb|--| \\
     \hline
-    Geviertstrich & --- & \verb|---| 
+    Geviertstrich                                 & ---              & \verb|---|
   \end{tabular}
 \end{frame}
 
-%TODO label and ref, pageref
+\begin{frame}[fragile]{Verweise}
+  \begin{itemize}
+    \item Label setzen: \verb|\label{<name>}|
+    \item Abschnitt referenzieren: \verb|\ref{<name>}|
+    \item Seite referenzieren: \verb|\pageref{<name>}|
+    \item Referenz nutzt immer aktuellste Abschnittnummer und Seitenzahl
+    \item zur Aktualisierung doppelte Durchläufe notwendig
+  \end{itemize}
+\end{frame}
 
 \begin{frame}{Mathematik}
   \begin{itemize}
@@ -237,6 +246,38 @@ pdflang={German}}
   \hfill
   \begin{minipage}{.5\textwidth}
     \inputminted{latex}{codebeispiele/math-equation.tex}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Abbildungen und Graphiken}
+  \begin{itemize}
+    \item Paket \verb|graphicx|
+    \item Unterstützung von jpg, png und pdf, Dateiendung kann weggelassen werden
+    \item Höhe und Breite als optionale Parameter
+      \begin{itemize}
+        \item \verb|\textwidth| oder \verb|textheight|
+      \end{itemize}
+    \item
+      \begin{minted}{latex}
+\includegraphics[width=.5\textwidth]{<filename>}
+      \end{minted}
+  \end{itemize}
+  \begin{center}
+    \includegraphics[height=.5\textheight]{katze}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Graphiken als Gleitobjekt}
+  \begin{itemize}
+    \item Automatische Positionierung im Text
+    \item Referenzierung über Nummerierung
+  \end{itemize}
+  \begin{minipage}[c]{.4\textwidth}
+    \include{codebeispiele/graphics-figure}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{.5\textwidth}
+    \inputminted{latex}{codebeispiele/graphics-figure.tex}
   \end{minipage}
 \end{frame}
 \end{document}
