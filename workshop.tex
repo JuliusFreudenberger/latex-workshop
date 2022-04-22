@@ -25,7 +25,13 @@
   pdftitle={WYSIWYAF with LaTeX},
   pdfkeywords={},
   pdfsubject={},
-pdflang={German}}
+  pdflang={German},
+  colorlinks,
+  linkcolor=black,
+  citecolor=black,
+  filecolor=black,
+  urlcolor=blue
+}
 \usepackage{biblatex}
 
 \begin{document}
@@ -49,7 +55,7 @@ pdflang={German}}
     \item Texteditor
       \begin{itemize}
         \item VSCode mit \LaTeX-Workshop, vim mit vimtex
-        \item \TeX{}Maker
+        \item \href{https://www.xm1math.net/texmaker/index.html}{\TeX{}Maker}
       \end{itemize}
     \item Alternativ: Online-Editoren
       \begin{itemize}
@@ -357,4 +363,39 @@ pdflang={German}}
   \end{itemize}
   \inputminted{latex}{codebeispiele/list-of-everything.tex}
 \end{frame}
+
+\begin{frame}{Nächste Projekte für \LaTeX{}?}
+  \begin{itemize}
+    \item Wissenschaftliches Dokumentieren
+    \item Praxissemesterbericht
+    \item Thesis
+    \bigskip
+    \item Bewerbungsunterlagen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Bewerbungsunterlagen}
+  \begin{itemize}
+    \item Lebenslauf mit \verb|moderncv|
+    \item Anschreiben mit \verb|dinbrief|
+  \end{itemize}
+  \begin{center}
+    \includegraphics[height=.7\textheight]{Lebenslauf}
+    \hspace{1em}
+    \includegraphics[height=.7\textheight]{Anschreiben}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Wohin bei Problemen?}
+  \begin{itemize}
+    \item Suchmaschine des Vertrauens
+    \item \href{https://de.wikibooks.org/wiki/LaTeX-Kompendium}{\LaTeX-Kompendium}
+    \item \href{https://www.overleaf.com/learn}{Overleaf documentation}
+    \item \href{https://golatex.de/wiki/index.php/Hauptseite}{Go\LaTeX-Wiki}
+    \item \href{https://tex.stackexchange.com}{\TeX-Stackexchange}
+  \end{itemize}
+\end{frame}
+
+\maketitle
+
 \end{document}
