@@ -1,0 +1,8 @@
+version: "3"
+services:
+    texlive:
+        image: texlive/texlive
+        volumes:
+            - ./data/:/latex
+        working_dir: /latex
+        tty: true
