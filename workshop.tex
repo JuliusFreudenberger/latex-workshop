@@ -219,12 +219,26 @@
   \end{tabular}
 \end{frame}
 
+\begin{frame}{Verweise -- Was wollen wir?}
+  \begin{itemize}
+    \item Referenzieren von Abbildungen, Tabellen, Codezeilen, etc.
+    \item automatische Nummerierung
+    \item kein manuelles Nummerieren, Aktualisieren und Überprüfen
+    \item automatische Verzeichnisse
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]{Verweise}
+  \pdfpcnote{ - Label können frei wählbaren Namen bekommen
+    - System ist dennoch hilfreich (fig:<name>, tab:<name>)
+    - Wenn sich Seiten verschieben oder die Abbildung verschoben wird, aktualisieren sich automatisch alle Verweise und das dazugehörige Verzeichnis
+    - erster Durchlauf: Anlegen einer Liste aller Verweise; zweiter Durchlauf: Einarbeiten aller gefunden labels
+  }
   \begin{itemize}
     \item Label setzen: \verb|\label{<name>}|
     \item Abschnitt referenzieren: \verb|\ref{<name>}|
     \item Seite referenzieren: \verb|\pageref{<name>}|
-    \item Referenz nutzt immer aktuellste Abschnittnummer und Seitenzahl
+    \item Referenz nutzt immer aktuellste Abschnittnummer bzw.~Seitenzahl -- ohne weiteren Aufwand
     \item zur Aktualisierung doppelte Durchläufe notwendig
   \end{itemize}
 \end{frame}
