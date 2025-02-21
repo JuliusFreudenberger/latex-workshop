@@ -152,20 +152,26 @@
   \pdfpcnote{
     - Stärke von LaTeX: Änderungen wirken sich konsistent auf das gesamte Dokument aus.
     - Keine manuelle Anpassung an mehreren Stellen nötig.
+    - Hervorhebung hängt von Dokumenttyp und Einstellungen ab. Standard kursiv
     - Niedrigste Stufe: subsubsection
     - Bei Text am Besten ein Satz in eine Zeile.
   }
   \begin{itemize}
     \item Eigener Text, Absätze
     \item Textformatierung: \textbf{fett} und \textit{kursiv} mit \verb|\textbf{fett}|, \verb|\textit{kursiv}|
+    \item \emph{Hervorhebung} im Text: \verb|\emph{hervorgehoben}|
     \item Eigene Abschnitte mit \verb|\section{} und \subsection{}|
+    \item In Büchern zusätzlich \verb|\chapter|
     \item Metadaten ändern
       \begin{itemize}
         \item Titel des Dokuments ändern mit \verb|\title{}|
         \item Eigener Name als Autor mit \verb|\author{}|
+        \item Anzeigen dieser Metadaten mit \verb|\maketitle|
       \end{itemize}
   \end{itemize}
 \end{frame}
+
+\maketitle
 
 \begin{frame}[fragile]{Umgebungen}
   \begin{itemize}
@@ -174,7 +180,7 @@
     \item können verschachtelt werden, aber nicht geschnitten
     \item Aufzählungen \verb|enumerate| (nummeriert) und \verb|itemize| (unnummeriert)
   \end{itemize}
-  \begin{center}
+  \begin{minipage}{.4\textwidth}
     \centering
     \begin{minted}{latex}
 \begin{itemize}
@@ -182,7 +188,19 @@
   \item Zweiter Punkt
 \end{itemize}
     \end{minted}
-  \end{center}
+  \end{minipage}
+  \begin{minipage}{.4\textwidth}
+    \centering
+    \begin{minted}{latex}
+\begin{itemize}
+  \item Erster Punkt
+  \begin{enumerate}
+    \item Anderer Punkt
+  \end{itemize} % Das geht nicht
+  \item Weiterer Punkt
+\end{enumerate}
+    \end{minted}
+  \end{minipage}
 \end{frame}
 
 \begin{frame}[fragile]{Wichtige besondere Zeichen}
