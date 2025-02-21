@@ -394,7 +394,7 @@
   \begin{itemize}
     \item kein Syntaxhighlighting und Zeilennummern
     \item Monospacefont
-    \item Befehle werden nicht ausgeführt
+    \item \LaTeX-Befehle werden nicht ausgeführt
   \end{itemize}
   \begin{minipage}{.4\textwidth}
     \input{codebeispiele/listings-verbatim.tex}
@@ -424,6 +424,9 @@
     \item Syntaxhighlighting vieler Sprachen
     \item Farben direkt voreingestellt
     \item benötigt \verb|pygmentize| und \verb|shell-escape|-Option beim Kompilieren
+      \begin{itemize}
+        \item \verb|pdflatex -shell-escape <filename>|
+      \end{itemize}
   \end{itemize}
   \begin{minipage}{.4\textwidth}
     \input{codebeispiele/listings-minted.tex}
