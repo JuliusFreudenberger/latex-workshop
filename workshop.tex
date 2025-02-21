@@ -5,6 +5,7 @@
 \graphicspath{{./graphics/}}
 \usepackage[ngerman]{babel}
 \usepackage{longtable,capt-of,fvextra,csquotes}
+\MakeOuterQuote{"}
 \usepackage{wrapfig,rotating}
 \usepackage[normalem]{ulem}
 \usepackage{amsmath,amssymb}
@@ -73,7 +74,7 @@
     \item setzt vorgegebenen Text und weitere Anweisungen automatisch
     \item versucht automatisch bestmögliches Layout
     \item kein WYSIWYG, sondern WYSIWYAF
-    \item Quellcode wird \glqq{}kompiliert\grqq{}
+    \item Quellcode wird "kompiliert"
     \item Dokument wird als PDF, PS, DVI oder sogar HTML ausgegeben
   \end{itemize}
 \end{frame}
@@ -126,7 +127,7 @@
   \begin{itemize}
     \item Im Projektverzeichnis \verb|pdflatex file.tex|
     \item automatisierter mit \verb|latexmk -pdf file.tex|
-    \item In \TeX{}Maker \glqq{}Schnelles Übersetzen\grqq{}
+    \item In \TeX{}Maker "Schnelles Übersetzen"
     \item mittels Docker und Docker Compose (Anleitung im Git Repo)
     \item Outputfile \verb|file.pdf| als PDF-Datei im gleichen Verzeichnis
   \end{itemize}
