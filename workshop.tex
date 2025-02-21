@@ -313,6 +313,24 @@
   \end{minipage}
 \end{frame}
 
+\begin{frame}[fragile]{Mathematik --- Klammern}
+  \begin{minipage}{.3\textwidth}
+    \input{codebeispiele/math-brackets}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.6\textwidth}
+    \inputminted{latex}{codebeispiele/math-brackets.tex}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Mathematik --- Bei Klammern beachten}
+  \begin{itemize}
+    \item Mit \verb|\left| und \verb|\right| passt sich die Größe der Klammern automatisch an
+    \item Alle Klammerarten können verwendet werden: $()$, $[]$, $\{\}$
+    \item Die Klammerung muss "aufgehen", also gleich viele öffnende wie schließende Klammern
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]{Abbildungen und Graphiken}
   \begin{itemize}
     \item Paket \verb|graphicx|
