@@ -350,10 +350,6 @@
 \end{frame}
 
 \begin{frame}{Graphiken als Gleitobjekt}
-  \begin{itemize}
-    \item Automatische Positionierung im Text
-    \item Referenzierung mit Nummerierung über Label
-  \end{itemize}
   \begin{minipage}[c]{.4\textwidth}
     \input{codebeispiele/graphics-figure}
   \end{minipage}
@@ -361,6 +357,24 @@
   \begin{minipage}[c]{.5\textwidth}
     \inputminted{latex}{codebeispiele/graphics-figure.tex}
   \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Gleitobjekte}
+  \begin{itemize}
+    \item können für Graphiken, Tabellen, Codelistings, etc. verwendet werden
+    \item Automatische Positionierung im Text -- leider nicht immer so wie gewünscht
+    \item daher Beeinflussung der Positionierung über verschiedene Parameter
+      \begin{itemize}
+        \item \verb|t|: oben an der Seite
+        \item \verb|b|: unten an der Seite
+        \item \verb|h|: \emph{ungefähr} die gleiche Stelle wie im Sourcecode
+        \item \verb|H|: \emph{genau} an der gleichen Stelle wie im Sourcecode
+        \item \verb|!|: überschreibt \LaTeX{}s interne Platzierungslogik
+      \end{itemize}
+    \item \verb|\begin{figure}[<parameter>]\end{figure}|
+    \item meine Empfehlung: nicht zu sehr erzwingen, dass Text und Abbildungen direkt beieinander sind
+    \item wenn der "Abstand" zu groß wird, \verb|h| hinzufügen
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Codelistings}
