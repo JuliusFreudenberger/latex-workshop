@@ -457,6 +457,92 @@
   \inputminted{latex}{codebeispiele/list-of-everything.tex}
 \end{frame}
 
+\begin{frame}[fragile]{Literaturverzeichnis}
+  \begin{itemize}
+    \item Erstellen/Generieren von Literaturdateien (\verb|.bib|, häufig Bib\TeX{}-Format genannt)
+    \item Hinzufügen von Literaturdateien (\verb|.bib|)
+    \item Zitieren von Literatur im Text (\verb|\cite{<referenz>}|)
+    \item Literaturverzeichnis (\verb|\printbibliography|)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Literaturdatei}
+  \begin{itemize}
+    \item Jeder Eintrag hat einen eindeutigen Key, unter dem er im Text referenziert wird
+    \item Literatur kann durch verschiedene Typen kategorisiert werden
+      \begin{itemize}
+        \item article
+        \item book
+        \item inproceedings
+        \item online
+        \item thesis
+        \item \dots
+      \end{itemize}
+    \item Jeder Literatureintrag hat verschiedene Attribute
+      \begin{itemize}
+        \item Titel
+        \item Autor:innen
+        \item Jahr
+        \item \dots
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Literaturdatei -- Beispiel}
+  \pdfpcnote{ - Einträge beginnen mit `@` gefolgt vom Typ
+    - Key ist nur intern und wird nicht angezeigt
+    - Felder sind benannt und nach `=` kommt in `"` der Wert
+    - Felder sind durch Kommata getrennt
+  }
+  \inputminted{bibtex}{codebeispiele/bib-file.bib}
+\end{frame}
+
+\begin{frame}{Quellen für Literaturdateien}
+  \begin{itemize}
+    \item Literatursuchmaschinen
+      \only<1>{\includegraphics[width=.8\textwidth]{graphics/boss}}
+      \only<2>{\includegraphics[width=.7\textwidth]{graphics/blb}}
+    \only<3->{\item Verlage\\}
+      \only<4>{\includegraphics[width=.6\textwidth]{graphics/springer}}
+      \only<5>{\includegraphics[width=.7\textwidth]{graphics/pearson}}
+    \only<6->{\item Literaturverwaltung}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Exkurs: Literaturverwaltung}
+  \only<1>{\centering \includegraphics[width=.9\textwidth]{graphics/bibliothek}}
+  \only<2->{
+    \begin{itemize}
+      \item Verschiedene Programme zur Literaturverwaltung verfügbar
+        \begin{itemize}
+          \item \href{https://www.zotero.org/}{Zotero} (Open-Source, Crossplattform)
+          \item \href{https://lumivero.com/products/citavi/}{Citavi} (Keine Hochschullizenz mehr in Baden-Württemberg)
+          \item \href{https://www.mendeley.com/}{Mendeley}
+        \end{itemize}
+      \item bieten Integrationen in WYSIWYG-Editoren
+      \item können auch nach Bib\TeX{} exportieren
+    \end{itemize}
+  }
+\end{frame}
+
+\begin{frame}{Exkurs: Literaturverwaltung -- Zotero}
+  \begin{itemize}
+    \item guter automatischer Export mit \href{https://retorque.re/zotero-better-bibtex/}{Better Bib\TeX{} for Zotero}
+    \item generiert automatisch Bib\TeX{} mit allen Literatureinträgen einer Sammlung
+    \item hält Datei bei Änderungen oder neu hinzufügten Dateien aktuell
+    \bigskip
+    \item einfach neue Literatur in Zotero einfügen mit \href{https://www.zotero.org/download/}{Zotero Connector}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Literatur -- Meine Empfehlungen}
+  \begin{itemize}
+    \item Verschiedene Literaturarten (Bücher, Paper, Thesen, Webseiten) in verschiedenen Untersammlungen verwalten
+    \item pro Untersammlung ein automatischer Bib\LaTeX{}-Export
+    \item Bib\LaTeX{}-Dateien in einen eigenen Unterordner
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{Nächste Projekte für \LaTeX{}?}
   \begin{itemize}
     \item Wissenschaftliches Dokumentieren

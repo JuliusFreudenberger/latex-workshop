@@ -1,0 +1,12 @@
+\usepackage[
+   backend=biber, % aktuellstes Backend
+   urldate=long, % langes, wortkarges Format (21. Januar 2010)
+   style=numeric, % Zitate im Text im Format: [1]
+   doi=true, url=true, % Anzeige von DOI/URL mit Zugangsdaten
+   sortcites=true, % Literaturverweise werden nach der 
+          % Reihenfolge im Literaturverzeichnis sortiert
+   sorting=nty % Sortierung nach Name, Titel, Jahr
+               % Üblich nach IEEE ist "none"
+]{biblatex}
+\addbibresource{./bib/<filename>.bib}
+\addbibresource{./bib/<filename2>.bib}
