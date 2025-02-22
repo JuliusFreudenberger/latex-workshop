@@ -132,7 +132,7 @@
     \item \href{https://www2.hs-esslingen.de/~jufrit00/latex/}{https://www2.hs-esslingen.de/\textasciitilde{}jufrit00/latex/}
     \item \href{https://gitlab.hs-esslingen.de/jufrit00/latex-workshop}{https://gitlab.hs-esslingen.de/jufrit00/latex-workshop}
     \item \href{https://github.com/JuliusFreudenberger/latex-workshop}{https://github.com/JuliusFreudenberger/latex-workshop}
-    \bigskip
+      \bigskip
     \item Vorlage befindet sich im Ordner \verb|codebeispiele/vorlage.tex|
     \item diese am besten in einen neuen leeren Ordner kopieren
   \end{itemize}
@@ -530,7 +530,7 @@
     \item guter automatischer Export mit \href{https://retorque.re/zotero-better-bibtex/}{Better Bib\TeX{} for Zotero}
     \item generiert automatisch Bib\TeX{} mit allen Literatureinträgen einer Sammlung
     \item hält Datei bei Änderungen oder neu hinzufügten Dateien aktuell
-    \bigskip
+      \bigskip
     \item einfach neue Literatur in Zotero einfügen mit \href{https://www.zotero.org/download/}{Zotero Connector}
   \end{itemize}
 \end{frame}
@@ -540,6 +540,44 @@
     \item Verschiedene Literaturarten (Bücher, Paper, Thesen, Webseiten) in verschiedenen Untersammlungen verwalten
     \item pro Untersammlung ein automatischer Bib\LaTeX{}-Export
     \item Bib\LaTeX{}-Dateien in einen eigenen Unterordner
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Einbinden der Literatur in das Dokument}
+  \inputminted{latex}{codebeispiele/inclusion-literature.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Zitieren im Text}
+  \begin{itemize}
+    \item Zitate werden mit \verb|\cite{<citation-key>}| getätigt
+    \item \verb|\parencite{<citation-key>}| setzt um Zitat Klammern
+    \item \verb|\citeauthor{<citation-key>}| zitiert Autor:innen
+    \item \verb|\citetitle{<citation-key>}| zitiert Titel
+      \bigskip
+    \item Standardmäßig wird nur Literatur im Literaturverzeichnis ausgegeben, das auch im Text zitiert wurde
+      \begin{itemize}
+        \item \verb|\nocite{<citation-key>}| fügt ein unzitiertes Werk ins Literaturverzeichnis ein
+        \item \verb|\nocite{*}| zeigt alle Werke im Literaturverzeichnis an
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Zitationsstile}
+  \begin{itemize}
+    \item Harvard-Stil (mit \href{https://ctan.org/pkg/biblatex-iso690?lang=en}{ISO 690 Literaturverzeichnis}): Koch, 2018
+      \begin{minted}{latex}
+\usepackage[style=iso-authoryear,natbib=true,
+            useauthor=true]{biblatex}
+\DeclareNameAlias{default}{family-given/given-family}
+      \end{minted}
+    \item Alphabetisch: [Koc18]
+      \begin{minted}{latex}
+\usepackage[style=alphabetic]{biblatex}
+      \end{minted}
+    \item Draft (geeignet zum Debuggen): \verb|<citation-key>|
+      \begin{minted}{latex}
+\usepackage[style=draft]{biblatex}
+      \end{minted}
   \end{itemize}
 \end{frame}
 
