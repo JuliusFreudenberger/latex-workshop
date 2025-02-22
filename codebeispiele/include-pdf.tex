@@ -1,0 +1,15 @@
+\usepackage{pdfpages} % In der Präambel
+\includepdf[pages=-]{<filename>.pdf}
+
+\includepdf[pages=-,landscape]{<filename>.pdf} % Seite im Querformat
+\includepdf[pages=3,{},8-11]{<filename>.pdf} % Seiten 3,
+    % eine leere Seite und die Seiten 8 bis einschl. 11
+
+\includepdf[pages=-,addtotoc={
+  1, % PDF-Seite, auf der das Label platziert werden soll
+  section, % Abschnittsname (oder chapter, subsection)
+  2, % Level des Abschnitts (in Buch chapter -> 1;
+        % in Artikel section -> 1)
+  Überschrift, % erscheint unter diesem Text im TOC
+  label % kann zum Referenzieren genutzt werden
+}]{<filename>.pdf}

@@ -609,6 +609,28 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Externe Dateien einbinden -- SVG}
+  \begin{itemize}
+    \item Nicht nativ möglich -- \LaTeX{} nutzt für Vektorgraphiken PDF
+    \item Pakete ermöglichen jedoch automatische Konvertierung
+    \item Nutzt dafür Inkscape und ImageMagick (\verb|convert|)
+    \item dafür ist wieder die Option \verb|-shell-escape| nötig!
+    \inputminted{latex}{codebeispiele/include-svg.tex}
+    \item Alternativ Vektordateien direkt als PDF bereitstellen und mit \verb|\includegraphics| einbinden
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Externe Dateien einbinden -- PDF}
+  \begin{itemize}
+    \item PDF-Dateien als ganze Seiten einfügen (bspw. externe Dokumente im Anhang)
+      \only<1>{\inputminted[lastline=6]{latex}{codebeispiele/include-pdf.tex}}
+      \only<2>{
+    \item PDF zum Inhaltsverzeichnis hinzufügen
+      \inputminted[firstline=8]{latex}{codebeispiele/include-pdf.tex}
+    }
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{Nächste Projekte für \LaTeX{}?}
   \begin{itemize}
     \item Wissenschaftliches Dokumentieren
