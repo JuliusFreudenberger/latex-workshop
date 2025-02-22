@@ -581,6 +581,34 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Formatierungsoptionen}
+  \begin{itemize}
+    \item Papierformat
+      \begin{itemize}
+        \item wird in den Optionen zur Dokumentenklasse gesetzt
+        \item A4: \verb|a4paper|
+        \item A5: \verb|a5paper|
+        \item Letter: \verb|letterpaper|
+      \end{itemize}
+    \item Seitenränder
+      \begin{itemize}
+        \item Mit Geometry-Paket
+          \inputminted{latex}{codebeispiele/geometry.tex}
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Querformat}
+  \begin{itemize}
+    \item Gesamtes Dokument im Querformat
+      \begin{minted}{latex}
+\documentclass[a4paper,landscape]{...}
+      \end{minted}
+    \item Einzelne Seiten im Querformat (nützlich für große Tabellen oder breite Abbildungen)
+      \inputminted{latex}{codebeispiele/landscape.tex}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{Nächste Projekte für \LaTeX{}?}
   \begin{itemize}
     \item Wissenschaftliches Dokumentieren
