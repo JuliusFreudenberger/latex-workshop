@@ -657,6 +657,47 @@
   \end{itemize}
 \end{frame}
 
+\section{Präsentationen}
+
+\begin{frame}[fragile]{Präsentationen}
+  \begin{itemize}
+    \item Dokumentenklasse \verb|beamer|
+    \item Präsentation besteht aus einer Abfolge von Folien
+      \inputminted{latex}{codebeispiele/beamer-frame.tex}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Präsentationen -- Besonderheiten}
+  \begin{itemize}
+    \item \verb|\section| oder \verb|\subsection| erstellen einzelne Folien mit den Überschriften
+    \item \verb|\maketitle| erstellt Titelfolie
+    \item zu langer Inhalt verschiebt sich nicht automatisch auf die nächste Folie
+    \item Für Listings oder \verb|verbatim| muss der Frame als \verb|fragile| gekennzeichnet werden
+      \inputminted{latex}{codebeispiele/frame-fragile.tex}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{"Animationen" -- Overlays}
+  \begin{itemize}
+    \item PDF kann keine bewegten Animationen
+    \item aber Aufzählungspunkte oder anderer Inhalt kann nacheinander eingeblendet werden
+    \item jedes Overlay wird auf einer neuen PDF-Seite angezeigt
+      \inputminted{latex}{codebeispiele/beamer-overlays.tex}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Themes}
+  \begin{itemize}
+    \item Klassische Themes in der \href{https://hartwork.org/beamer-theme-matrix/}{Beamer Theme Matrix}
+    \item Modernes Theme (auch in dieser Präsentation): \href{https://ctan.org/pkg/beamertheme-metropolis}{Metropolis}
+      \begin{itemize}
+        \item Moderne Font (wenn mit Xe\LaTeX{} oder Lua\LaTeX{} kompiliert wird)
+        \item kann optional einen Fortschrittsbalken anzeigen
+        \item Einstellungen mit \verb|\metroset|
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{Nächste Projekte für \LaTeX{}?}
   \begin{itemize}
     \item Wissenschaftliches Dokumentieren
