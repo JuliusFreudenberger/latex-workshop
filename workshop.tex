@@ -85,20 +85,20 @@
     - Inhaltsverzeichnis und Verzeichnisse für Abbildungen, Stichworte, Abkürzungen und Literatur
     - Abbildungen und weitere Referenzelemente werden automatisch an der bestmöglichen Stelle eingefügt
   - Deutlich mehr Automatisierungen als bei Word, "Layoutarbeit" am Ende einer Arbeit deutlich geringer}
-  \begin{minipage}{.4\textwidth}
-    \begin{itemize}
-      \item Automatischer Textsatz
-      \item Automatische Referenzen
-      \item Automatisches Layout
-    \end{itemize}
-  \end{minipage}
-  \begin{minipage}{.5\textwidth}
-    \begin{itemize}
-      \item Keine große Layoutarbeit am Ende
-      \item Kein Ruinieren des Dokuments beim Verschieben eines Bildes
-      \item Das Dokument "sieht einfach schön aus"
-    \end{itemize}
-  \end{minipage}
+  \begin{columns}[t]
+    \column{.4\textwidth}
+      \begin{itemize}
+        \item Automatischer Textsatz
+        \item Automatische Referenzen
+        \item Automatisches Layout
+      \end{itemize}
+    \column{.5\textwidth}
+      \begin{itemize}
+        \item Keine große Layoutarbeit am Ende
+        \item Kein Ruinieren des Dokuments beim Verschieben eines Bildes
+        \item Das Dokument "sieht einfach schön aus"
+      \end{itemize}
+  \end{columns}
   \begin{center}
     Wenn man einmal \LaTeX{} gelernt hat, ist das Layouten von wissenschaftlichen Arbeiten deutlich einfacher.
   \end{center}
@@ -192,18 +192,19 @@
     \item können verschachtelt werden, aber nicht geschnitten
     \item Aufzählungen \verb|enumerate| (nummeriert) und \verb|itemize| (unnummeriert)
   \end{itemize}
-  \begin{minipage}{.4\textwidth}
-    \centering
-    \begin{minted}{latex}
+  \begin{columns}[t]
+    \begin{column}{.3\textwidth}
+      \centering
+      \begin{minted}{latex}
 \begin{itemize}
   \item Erster Punkt
   \item Zweiter Punkt
 \end{itemize}
-    \end{minted}
-  \end{minipage}
-  \begin{minipage}{.4\textwidth}
-    \centering
-    \begin{minted}{latex}
+      \end{minted}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \centering
+      \begin{minted}{latex}
 \begin{itemize}
   \item Erster Punkt
   \begin{enumerate}
@@ -211,8 +212,9 @@
   \end{itemize} % Das geht nicht
   \item Weiterer Punkt
 \end{enumerate}
-    \end{minted}
-  \end{minipage}
+      \end{minted}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Wichtige besondere Zeichen}
@@ -274,13 +276,14 @@
     \item Beginn und Ende mit \verb|$|
   \end{itemize}
   
-  \begin{minipage}{.4\textwidth}
-    \input{codebeispiele/math-inline}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{.5\textwidth}
-    \inputminted{latex}{codebeispiele/math-inline.tex}
-  \end{minipage}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \input{codebeispiele/math-inline}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \inputminted{latex}{codebeispiele/math-inline.tex}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Mathematik --- block}
@@ -290,13 +293,16 @@
     \item Beginn mit \verb|\[|, Ende mit \verb|\]|
   \end{itemize}
   
-  \begin{minipage}{.4\textwidth}
-    \input{codebeispiele/math-block}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{.5\textwidth}
-    \inputminted{latex}{codebeispiele/math-block.tex}
-  \end{minipage}
+  \bigskip
+
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \input{codebeispiele/math-block}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \inputminted{latex}{codebeispiele/math-block.tex}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Mathematik --- Gleichung}
@@ -306,33 +312,36 @@
     \item Beginn mit \verb|\begin{equation}| Ende mit \verb|\end{equation}|
   \end{itemize}
   
-  \begin{minipage}{.4\textwidth}
-    \input{codebeispiele/math-equation}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{.5\textwidth}
-    \inputminted{latex}{codebeispiele/math-equation.tex}
-  \end{minipage}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \input{codebeispiele/math-equation}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/math-equation.tex}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Mathematik --- Zeichen}
-  \begin{minipage}{.4\textwidth}
-    \input{codebeispiele/math-symbols}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{.5\textwidth}
-    \inputminted{latex}{codebeispiele/math-symbols.tex}
-  \end{minipage}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \input{codebeispiele/math-symbols}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/math-symbols.tex}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Mathematik --- Klammern}
-  \begin{minipage}{.3\textwidth}
-    \input{codebeispiele/math-brackets}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{.6\textwidth}
-    \inputminted{latex}{codebeispiele/math-brackets.tex}
-  \end{minipage}
+  \begin{columns}
+    \begin{column}{.3\textwidth}
+      \input{codebeispiele/math-brackets}
+    \end{column}
+    \begin{column}{.6\textwidth}
+      \inputminted{latex}{codebeispiele/math-brackets.tex}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Mathematik --- Bei Klammern beachten}
@@ -362,13 +371,14 @@
 \end{frame}
 
 \begin{frame}{Graphiken als Gleitobjekt}
-  \begin{minipage}[c]{.4\textwidth}
-    \input{codebeispiele/graphics-figure}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[c]{.5\textwidth}
-    \inputminted{latex}{codebeispiele/graphics-figure.tex}
-  \end{minipage}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \input{codebeispiele/graphics-figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/graphics-figure.tex}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Gleitobjekte}
@@ -408,13 +418,14 @@
     \item Monospacefont
     \item \LaTeX-Befehle werden nicht ausgeführt
   \end{itemize}
-  \begin{minipage}{.4\textwidth}
-    \input{codebeispiele/listings-verbatim.tex}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{.5\textwidth}
-    \inputminted{latex}{codebeispiele/listings-verbatim.tex}
-  \end{minipage}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \input{codebeispiele/listings-verbatim.tex}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/listings-verbatim.tex}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Die lstlistings-Umgebung}
@@ -422,13 +433,14 @@
     \item Syntaxhighlighting bestimmter Sprachen und Zeilennummern
     \item Customization mit Schriftgröße und Farben
   \end{itemize}
-  \begin{minipage}{.4\textwidth}
-    \input{codebeispiele/listings-lstlistings.tex}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{.5\textwidth}
-    \inputminted{latex}{codebeispiele/listings-lstlistings.tex}
-  \end{minipage}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \input{codebeispiele/listings-lstlistings.tex}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/listings-lstlistings.tex}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Die minted-Umgebung}
@@ -440,26 +452,28 @@
         \item \verb|pdflatex -shell-escape <filename>|
       \end{itemize}
   \end{itemize}
-  \begin{minipage}{.4\textwidth}
-    \input{codebeispiele/listings-minted.tex}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{.5\textwidth}
-    \inputminted{latex}{codebeispiele/listings-minted.tex}
-  \end{minipage}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \input{codebeispiele/listings-minted.tex}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/listings-minted.tex}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Code aus Datei einbinden}
   \begin{itemize}
     \item besonders geeignet für längere Codeauszüge
   \end{itemize}
-  \begin{minipage}{.4\textwidth}
-    \input{codebeispiele/listings-from-file.tex}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{.5\textwidth}
-    \inputminted{latex}{codebeispiele/listings-from-file.tex}
-  \end{minipage}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \input{codebeispiele/listings-from-file.tex}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/listings-from-file.tex}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Weitere Verzeichnisse}
