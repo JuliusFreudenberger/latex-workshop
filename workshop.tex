@@ -649,6 +649,27 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Header und Footer}
+  \begin{itemize}
+    \item Kopf- und Fußzeilen können mit \verb|scrlayer-scrpage| konfiguriert werden
+    \item Dafür muss der Style \verb|\pagestyle{scrheadings}| genutzt werden
+    \item Inhalt der Zeilen wird dann mit
+      \begin{itemize}
+        \item \verb|ihead| bzw. \verb|ifoot| (inner)
+        \item \verb|chead| bzw. \verb|cfoot| (center)
+        \item \verb|ohead| bzw. \verb|ofoot| (outer)
+      \end{itemize}
+      beschrieben
+    \item Bei zweiseitigen Layouts ist \verb|outer| am Rand der Seite und \verb|inner| an der Buchfalz
+    \item \verb|\pagemark| enthält die aktuelle Seite
+    \item Mit \verb|\pagestyle{empty}| werden keine Kopf- und Fußzeilen angezeigt
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Header und Footer -- Beispiel}
+  \inputminted{latex}{codebeispiele/header-footer.tex}
+\end{frame}
+
 \begin{frame}[fragile]{Externe Dateien einbinden -- SVG}
   \begin{itemize}
     \item Nicht nativ möglich -- \LaTeX{} nutzt für Vektorgraphiken PDF
