@@ -173,6 +173,18 @@
 
 \maketitle
 
+\begin{frame}[fragile]{Anführungszeichen}
+  \begin{itemize}
+    \item Standardmäßig wird ein \verb|"| direkt als solches gesetzt
+    \item deutsche Anführungszeichen können mit den Befehlen \verb|\glqq{}| und \verb|\grqq{}| gesetzt werden
+    \item mit dem Paket \verb|csquotes| können \verb|"| als sprachlich richtige Anführungszeichen angezeigt
+      \begin{itemize}
+        \item abhängig von der Spracheinstellung in \verb|babel|
+      \end{itemize}
+    \inputminted{latex}{codebeispiele/quotation.tex}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]{Umgebungen}
   \begin{itemize}
     \item kennzeichnen besondere Bereiche im Dokument
