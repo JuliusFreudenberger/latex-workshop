@@ -502,6 +502,10 @@
   \inputminted{latex}{codebeispiele/list-of-everything.tex}
 \end{frame}
 
+\begin{frame}[fragile]{Verzeichnisse im Inhaltsverzeichnis}
+  \inputminted{latex}{codebeispiele/lists-in-toc.tex}
+\end{frame}
+
 \begin{frame}[fragile]{Literaturverzeichnis}
   \begin{itemize}
     \item Erstellen/Generieren von Literaturdateien (\verb|.bib|, häufig Bib\TeX{}-Format genannt)
@@ -750,6 +754,26 @@
         \item Einstellungen mit \verb|\metroset|
       \end{itemize}
   \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Modularisierung}
+  \begin{itemize}
+    \item Bei größeren Projekten (> 2 Seiten) nicht alles in einer Datei behalten
+    \item \LaTeX{}-Dateien können mit \verb|\include{<filename>}| oder \verb|\input{<filename>}| eingebunden werden
+      \begin{itemize}
+        \item \verb|\include| für Kapitel/große Abschnitte -> fügt automatisch einen Seitenumbruch ein
+        \item \verb|\input| für Unterkapitel/kleinere Abschnitte
+      \end{itemize}
+    \item eine Datei für jedes Kapitel und den eröffnenden Text, dann jedes Unterkapitel aus der eigenen Datei einbinden
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Beispielhafte Dateistruktur}
+  \lstinputlisting{codebeispiele/example-filestructure.txt}
+\end{frame}
+
+\begin{frame}[fragile]{Hauptteile eines Dokuments}
+  \inputminted{latex}{codebeispiele/parts-of-document.tex}
 \end{frame}
 
 \begin{frame}{Nächste Projekte für \LaTeX{}?}

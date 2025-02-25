@@ -1,0 +1,14 @@
+|-  main.tex # (includes every chapter*/chapter*.tex)
+|- (preamble.tex) # (can also be included in main.tex)
+|- chapter1
+   | - chapter1.tex # (first paragraph of chapter
+                      and includes all sections)
+   | - section1.tex
+   | - section2.tex
+|- chapter2
+   ...
+|- bib
+   | - book.bib
+   | - thesis.bib
+|- graphics
+|- code
