@@ -1,0 +1,178 @@
+\documentclass[presentation,aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\graphicspath{{./graphics/}}
+\usepackage[ngerman]{babel}
+\usepackage{longtable,capt-of,fvextra,csquotes}
+\MakeOuterQuote{"}
+\usepackage{wrapfig,rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{listings,minted}
+\usepackage[duration=20]{pdfpc}
+\usetheme{metropolis}
+\author{Julius Freudenberger}
+\date{Cyberweek Sommersemester 2025}
+\title{WYSIWYAF with \LaTeX}
+\subtitle{Wissenschaftliche Arbeiten oder Präsentationen mit \LaTeX -- Fortgeschrittene}
+\mode<presentation>{\usetheme{metropolis}}
+\mode<beamer|handout>{\metroset{sectionpage=progressbar}}
+\mode<beamer|handout>{\metroset{subsectionpage=progressbar}}
+\mode<beamer|handout>{\metroset{progressbar=frametitle}}
+\mode<beamer|handout>{\metroset{block=fill}}
+\institute[Hochschule Esslingen]{Hochschule Esslingen}
+\hypersetup{
+  pdfauthor={Julius Freudenberger},
+  pdftitle={WYSIWYAF with LaTeX -- Aufbaukurs},
+  pdfkeywords={},
+  pdfsubject={},
+  pdflang={German},
+  colorlinks,
+  linkcolor=black,
+  citecolor=black,
+  filecolor=black,
+  urlcolor=blue
+}
+\usepackage{biblatex}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}[fragile]{Bevor wir beginnen: Was brauche ich?}
+  \begin{itemize}
+    \item \LaTeX-Distribution: \TeX{}Live oder Mik\TeX{}
+      \begin{itemize}
+        \item Windows: \href{https://miktex.org/}{https://miktex.org/}
+        \item Mac: \href{https://tug.org/mactex/}{https://tug.org/mactex/}
+        \item Linux: Installation über den Paketmanager
+          \begin{itemize}
+            \item deb: \verb|texlive-base|, rpm: \verb|texlive texlive-latex|
+            \item Arch Linux: \verb|texlive-core|
+            \item NixOS: \verb|nixpkgs.texliveBasic|
+          \end{itemize}
+        \item Docker: \verb|texlive/texlive|
+      \end{itemize}
+    \item Texteditor
+      \begin{itemize}
+        \item \href{https://code.visualstudio.com/}{VSCode} mit \href{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}{\LaTeX-Workshop}, \href{https://www.vim.org/}{vim} mit \href{https://github.com/lervag/vimtex}{vimtex}
+        \item \href{https://www.xm1math.net/texmaker/index.html}{\TeX{}Maker}
+      \end{itemize}
+    \item Alternativ: Online-Editoren
+      \begin{itemize}
+        \item Overleaf (\href{https://www.overleaf.com}{https://www.overleaf.com}, Registrierung erforderlich)
+        \item \TeX{}Viewer (\href{https://texviewer.herokuapp.com}{https://texviewer.herokuapp.com}, direkt nutzbar)
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\input{about-me}
+\begin{frame}{Wer seid ihr?}
+  \begin{itemize}
+    \item Name
+    \item Fakultät? Was macht ihr da?
+    \item Schon von \LaTeX{} gehört oder etwas damit gemacht?
+    \item Was stört dich am meisten an traditionellen Textverarbeitungsprogrammen?
+    \item Nächste (wissenschaftliche) Arbeit, die du vielleicht mit \LaTeX{} schreiben möchtest?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Materialien für den Kurs}
+  \begin{itemize}
+    \item Dieser Foliensatz
+    \item Kleine Vorlagen zum Mitmachen
+    \item Dokumente, die wir im Laufe des Kurses erstellen
+      \bigskip
+    \item wird alles im geteilten Ordner hochgeladen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Inhalt}
+  \tableofcontents
+\end{frame}
+
+\begin{frame}[fragile]{Weitere Verzeichnisse}
+  \begin{itemize}
+    \item automatisch aktualisierendes Inhaltsverzeichnis sowie Verzeichnisse für Abbildungen, Codelistings (Abkürzungen, Stichwörter, Bibliographie, \dots)
+  \end{itemize}
+  \inputminted{latex}{codebeispiele/list-of-everything.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Verzeichnisse im Inhaltsverzeichnis}
+  \inputminted{latex}{codebeispiele/lists-in-toc.tex}
+\end{frame}
+
+\section{Präsentationen}
+
+\begin{frame}[fragile]{Präsentationen}
+  \begin{itemize}
+    \item Dokumentenklasse \verb|beamer|
+    \item Präsentation besteht aus einer Abfolge von Folien
+      \inputminted{latex}{codebeispiele/beamer-frame.tex}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Präsentationen -- Besonderheiten}
+  \begin{itemize}
+    \item \verb|\section| oder \verb|\subsection| erstellen einzelne Folien mit den Überschriften
+    \item \verb|\maketitle| erstellt Titelfolie
+    \item zu langer Inhalt verschiebt sich nicht automatisch auf die nächste Folie
+    \item Für Listings oder \verb|verbatim| muss der Frame als \verb|fragile| gekennzeichnet werden
+      \inputminted{latex}{codebeispiele/frame-fragile.tex}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{"Animationen" -- Overlays}
+  \begin{itemize}
+    \item PDF kann keine bewegten Animationen
+    \item aber Aufzählungspunkte oder anderer Inhalt kann nacheinander eingeblendet werden
+    \item jedes Overlay wird auf einer neuen PDF-Seite angezeigt
+      \inputminted{latex}{codebeispiele/beamer-overlays.tex}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Themes}
+  \begin{itemize}
+    \item Klassische Themes in der \href{https://hartwork.org/beamer-theme-matrix/}{Beamer Theme Matrix}
+    \item Modernes Theme (auch in dieser Präsentation): \href{https://ctan.org/pkg/beamertheme-metropolis}{Metropolis}
+      \begin{itemize}
+        \item Moderne Font (wenn mit Xe\LaTeX{} oder Lua\LaTeX{} kompiliert wird)
+        \item kann optional einen Fortschrittsbalken anzeigen
+        \item Einstellungen mit \verb|\metroset|
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Bewerbungsunterlagen}
+  \begin{columns}
+    \column{.5\textwidth}
+      \centering
+      \begin{itemize}
+        \item Lebenslauf mit \verb|moderncv|
+      \end{itemize}
+      \includegraphics[height=.7\textheight]{Lebenslauf}
+    \column{.5\textwidth}
+      \centering
+      \begin{itemize}
+        \item Anschreiben mit \verb|dinbrief|
+      \end{itemize}
+      \includegraphics[height=.7\textheight]{Anschreiben}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Wohin bei Problemen?}
+  \begin{itemize}
+    \item \verb|texdoc <paketname>|
+    \item Suchmaschine des Vertrauens
+    \item \href{https://de.wikibooks.org/wiki/LaTeX-Kompendium}{\LaTeX-Kompendium}
+    \item \href{https://www.overleaf.com/learn}{Overleaf documentation}
+    \item \href{https://golatex.de/wiki/index.php/Hauptseite}{Go\LaTeX-Wiki}
+    \item \href{https://tex.stackexchange.com}{\TeX-Stackexchange}
+  \end{itemize}
+\end{frame}
+
+\maketitle
+
+\end{document}
