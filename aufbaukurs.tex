@@ -3,12 +3,13 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \graphicspath{{./graphics/}}
-\usepackage[ngerman]{babel}
+\usepackage[ngerman,english]{babel}
 \usepackage{longtable,capt-of,fvextra,csquotes}
 \MakeOuterQuote{"}
 \usepackage{wrapfig,rotating}
 \usepackage[normalem]{ulem}
 \usepackage{amsmath,amssymb}
+\usepackage{acro}
 \usepackage{hyperref}
 \usepackage{listings,minted}
 \usepackage[duration=20]{pdfpc}
@@ -35,6 +36,9 @@
   filecolor=black,
   urlcolor=blue
 }
+
+\input{codebeispiele/acro-used-acronyms.tex}
+
 \usepackage{biblatex}
 
 \begin{document}
@@ -100,8 +104,85 @@
   \inputminted{latex}{codebeispiele/list-of-everything.tex}
 \end{frame}
 
-\begin{frame}[fragile]{Verzeichnisse im Inhaltsverzeichnis}
-  \inputminted{latex}{codebeispiele/lists-in-toc.tex}
+\section{Abkürzungen}
+
+\begin{frame}{Abkürzungen mit acro}
+  \begin{itemize}
+    \item Liste von Abkürzungen mit ihrer langen Form
+    \item automatisches Einfügen der richtigen Form
+      \begin{itemize}
+        \item lange Form beim ersten Auftreten
+        \item Abkürzung sonst
+        \item manuell überschreibbar
+      \end{itemize}
+    \item Pluralformen in Abkürzung und langer Form
+    \item automatisches Verzeichnis der verwendeten Abkürzungen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Einrichtung des Pakets}
+  \inputminted{latex}{codebeispiele/acro-setup.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Benutzte Abkürzungen in den Beispielen}
+  \inputminted{latex}{codebeispiele/acro-used-acronyms.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Setzen von Abkürzungen}
+  \begin{columns}
+    \begin{column}{.49\textwidth}
+      \input{codebeispiele/acro-usage.tex}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/acro-usage.tex}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Setzen von Abkürzungen}
+  \begin{itemize}
+    \item in den meisten Fällen reicht \verb|\ac|
+    \item für Großschreibung (wie an Satzanfängen) ein großes \verb|A| in den Befehlen verwenden: \verb|\Ac|
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Besonderheiten in deutschen Texten -- Pluralformen}
+  \begin{itemize}
+    \item Pluralform nicht mit 's' gebildet
+  \end{itemize}
+  \inputminted[firstline=8,lastline=8]{latex}{codebeispiele/acro-used-acronyms.tex}
+  \vspace{2em}
+  \begin{columns}
+    \begin{column}{.49\textwidth}
+      \input{codebeispiele/acro-german-plurals.tex}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/acro-german-plurals.tex}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Besonderheiten in deutschen Texten -- Übersetzungen}
+  geläufige englische Abkürzung für deutschen Begriff
+  \inputminted[firstline=3,lastline=7]{latex}{codebeispiele/acro-used-acronyms.tex}
+  \input{codebeispiele/acro-german.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Besonderheiten in deutschen Texten -- Abweichender Kasus in langer Form}
+  \begin{itemize}
+    \item Bei langer Form bei der ersten Erwähnung wird das Wort in einem anderen Kasus benötigt
+    \item Trick: Pluralform missbrauchen
+  \end{itemize}
+  \inputminted[firstline=9,lastline=12]{latex}{codebeispiele/acro-used-acronyms.tex}
+  \vspace{2em}
+  \begin{columns}
+    \begin{column}{.49\textwidth}
+      \input{codebeispiele/acro-german-different-case.tex}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/acro-german-different-case.tex}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \section{Präsentationen}
