@@ -10,6 +10,9 @@
 \usepackage[normalem]{ulem}
 \usepackage{amsmath,amssymb}
 \usepackage{acro}
+\usepackage[nonumberlist]{glossaries}
+\makeglossaries
+\renewcommand{\glossarysection}[2][]{}
 \usepackage{hyperref}
 \usepackage{listings,minted}
 \usepackage[duration=20]{pdfpc}
@@ -38,6 +41,7 @@
 }
 
 \input{codebeispiele/acro-used-acronyms.tex}
+\input{codebeispiele/glossaries-used-words.tex}
 
 \usepackage{biblatex}
 
@@ -183,6 +187,47 @@
       \inputminted{latex}{codebeispiele/acro-german-different-case.tex}
     \end{column}
   \end{columns}
+\end{frame}
+
+\section{Glossar}
+
+\begin{frame}{Glossar mit glossaries}
+  \begin{itemize}
+    \item Liste von Wörtern mit ihren Erklärungen
+    \item im Text wird Wort (mit Link auf das Glossar) gesetzt
+    \item Glossar enthält alle benutzten Wörter und ihre Erklärungen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Einrichtung des Pakets}
+  \inputminted{latex}{codebeispiele/glossaries-setup.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Setzen eines Wortes aus dem Glossar}
+  \begin{columns}
+    \begin{column}{.49\textwidth}
+      \input{codebeispiele/glossaries-usage.tex}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/glossaries-usage.tex}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Resultierendes Glossar}
+  %\minted{latex}{\printglossary}
+  \printglossary
+\end{frame}
+
+\begin{frame}[fragile]{Besonderheit beim Kompilieren}
+  \begin{itemize}
+    \item Erstellung des Glossars geschieht mittels externem Befehl (ähnlich wie bei Literaturverzeichnissen)
+    \item \verb|> makeglossaries <filename>|
+    \vspace{1em}
+    \item alternativ: anstatt \mint{latex}{\makeglossaries} \mint{latex}{\makenoidxglossaries} nutzen
+    \item dann wird Sortierung intern gemacht (langsamer)
+    \item zum Anzeigen des Glossars dann \mint{latex}{\printnoidxglossaries}
+  \end{itemize}
 \end{frame}
 
 \section{Präsentationen}
