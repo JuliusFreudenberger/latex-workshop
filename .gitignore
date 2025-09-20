@@ -49,6 +49,10 @@
 # latexrun
 latex.out/
 
+## Files from failed runs
+*.bbl-SAVE-ERROR
+*.bcf-SAVE-ERROR
+
 ## Auxiliary and intermediate files from other packages:
 # algorithms
 *.alg
@@ -121,7 +125,7 @@ acs-*.bib
 *.sls
 
 # uncomment this for glossaries-extra (will ignore makeindex's style files!)
-# *.ist
+*.ist
 
 # gnuplot
 *.gnuplot
