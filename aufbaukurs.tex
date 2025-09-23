@@ -4,7 +4,7 @@
 \usepackage{graphicx}
 \graphicspath{{./graphics/}}
 \usepackage[ngerman,english]{babel}
-\usepackage{longtable,capt-of,fvextra,csquotes}
+\usepackage{tabularx,longtable,capt-of,fvextra,csquotes}
 \MakeOuterQuote{"}
 \usepackage{wrapfig,rotating}
 \usepackage[normalem]{ulem}
@@ -100,6 +100,106 @@
 \begin{frame}{Inhalt}
   \tableofcontents
 \end{frame}
+
+\section{Tabellen}
+
+\begin{frame}{Setzen von Tabellen}
+  \begin{itemize}
+    \item Tabellen haben eigene Syntax in \LaTeX
+    \item Ausrichtung einzelner Spalten kann individuell festgelegt werden
+    \item Linien können für jede Spalte/Zeile individuell festgelegt werden
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Beispieltabelle}
+  \begin{columns}
+    \begin{column}{.49\textwidth}
+      \input{codebeispiele/table-simple.tex}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/table-simple.tex}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Setzen von Tabellen}
+  \begin{itemize}
+    \item Spaltentrennung
+      \begin{itemize}
+        \item Spalten werden in jeder Zeile durch \verb|&| getrennt
+        \item muss nicht zwingend untereinander stehen, sieht aber aufgeräumt im Code aus $\rightarrow$ hat keine Auswirkung auf die Formatierung der Tabelle
+      \end{itemize}
+    \item Zeilentrennung
+      \begin{itemize}
+        \item jede Zeile endet \emph{zwingend} mit \verb|\\|
+        \item Linie wird mit \verb|\hline| erstellt
+        \item muss zwischen allen Zeilen gesetzt werden, wo eine Linie auftauchen soll
+      \end{itemize}
+    \item Zweiter Parameter
+      \begin{itemize}
+        \item gibt an, wie viele Spalten es gibt und wie sie ausgerichtet sind
+          \begin{itemize}
+            \item \verb|c| -- centered
+            \item \verb|l| -- left
+            \item \verb|r| -- right
+          \end{itemize}
+        \item \verb/|/ gibt an, ob die Spalten durch eine Linie getrennt werden sollen
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Beschriftung einer Tabelle}
+  \begin{columns}
+    \begin{column}{.45\textwidth}
+      \input{codebeispiele/table-float.tex}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/table-float.tex}
+    \end{column}
+  \end{columns}
+  \vspace{1em}
+  \begin{itemize}
+    \centering
+    \item gleiche Platzierungsregeln wie bei anderen Floats gelten
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Einschränkungen von tabular}
+  \begin{itemize}
+    \item Wenn der Text zu lang ist, wird kein Zeilenumbruch gesetzt
+      \begin{itemize}
+        \item Abhilfe: Spalte mit \verb|p{...cm}| deklarieren oder
+        \item \verb|\usepackage{tabularx}|
+      \end{itemize}
+    \item Tabellen mit \verb|tabular| können keine Seitenumbrüche
+      \begin{itemize}
+        \item Lange Tabellen werden am Ende der Seite einfach abgeschnitten
+        \item Lösung: \verb|longtable|
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{tabularx}
+  \begin{columns}
+    \begin{column}{.35\textwidth}
+      \input{codebeispiele/table-tabularx.tex}
+    \end{column}
+    \begin{column}{.55\textwidth}
+      \inputminted{latex}{codebeispiele/table-tabularx.tex}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{longtable}
+  \inputminted{latex}{codebeispiele/table-longtable.tex}
+\end{frame}
+
+\begin{frame}{Beispiel für longtable}
+  \input{codebeispiele/table-longtable.tex}
+\end{frame}
+
+\section{}
 
 \begin{frame}[fragile]{Weitere Verzeichnisse}
   \begin{itemize}
