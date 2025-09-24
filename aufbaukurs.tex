@@ -15,6 +15,8 @@
 \renewcommand{\glossarysection}[2][]{}
 \usepackage{hyperref}
 \usepackage{listings,minted}
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm,compat=1.18}
 \usepackage[duration=20]{pdfpc}
 \usetheme{metropolis}
 \author{Julius Freudenberger}
@@ -395,6 +397,74 @@
         \item Einstellungen mit \verb|\metroset|
       \end{itemize}
   \end{itemize}
+\end{frame}
+
+\section{Diagramme}
+
+\begin{frame}[fragile]{Einbinden von pgfplots}
+  \begin{itemize}
+    \item Einbinden mit \verb|\usepackage|
+    \item Setzen der Version sehr empfohlen
+      \begin{itemize}
+        \item Garantiert gleiches Verhalten auch mit späteren Versionen von pgfplots
+        \item kann in neuen Dokumenten auf neue Version gesetzt werden (aktuell 1.18)
+      \end{itemize}
+  \end{itemize}
+  \inputminted{latex}{codebeispiele/pgfplots-setup.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Diagramme mit pgfplots}
+  \begin{columns}
+    \begin{column}{.49\textwidth}
+      \input{codebeispiele/pgfplots.tex}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \inputminted{latex}{codebeispiele/pgfplots.tex}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Syntax von pgfplots}
+  \begin{itemize}
+    \item Plot liegt immer in \verb|\tikzpicture| und \verb|axis|
+    \item Plot hinzufügen mit \verb|\addplot|
+    \item Plot endet mit \verb|;|
+    \item Achsen und Plots haben sehr viele Optionen, es gibt aber Defaults
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Plots aus Daten}
+  \only<1>{
+    \begin{columns}
+      \begin{column}{.3\textwidth}
+        \inputminted{text}{codebeispiele/pgfplots-data.dat}
+      \end{column}
+      \begin{column}{.6\textwidth}
+        \inputminted{latex}{codebeispiele/pgfplots-plot-data.tex}
+      \end{column}
+    \end{columns}
+  }
+  \only<2>{
+    \centering
+    \input{codebeispiele/pgfplots-plot-data.tex}
+  }
+\end{frame}
+
+\begin{frame}{Säulendiagramme}
+  \only<1>{
+    \begin{columns}
+      \begin{column}{.3\textwidth}
+        \inputminted{text}{codebeispiele/pgfplots-bars.dat}
+      \end{column}
+      \begin{column}{.6\textwidth}
+        \inputminted{latex}{codebeispiele/pgfplots-bar-chart.tex}
+      \end{column}
+    \end{columns}
+  }
+  \only<2>{
+    \centering
+    \input{codebeispiele/pgfplots-bar-chart.tex}
+  }
 \end{frame}
 
 \begin{frame}[fragile]{Bewerbungsunterlagen}

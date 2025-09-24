@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    title=Import from table,
+    xlabel={$x$},
+    ylabel={$y$},
+    legend pos = outer north east,
+  ]
+    \addplot [blue] table
+    {codebeispiele/pgfplots-data.dat};
+    \legend{$\approx x^2$}
+  \end{axis}
+\end{tikzpicture}

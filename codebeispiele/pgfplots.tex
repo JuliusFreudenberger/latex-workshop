@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    title={Beispieldiagramm},
+    xlabel={$x$-Achse},
+    ylabel={$y$-Achse},
+  ]
+  \addplot[red,
+    domain=-5:5,
+    samples=100] { x^2 };
+  \legend{$x^2$}
+  \end{axis}
+\end{tikzpicture}
